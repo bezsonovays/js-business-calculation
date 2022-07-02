@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рассчет бизнеса</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calculatorForm" oninput="SaveForm(this)">
+        <div class="calc__section">
+            <div class="calc__title">Затраты</div>
+    
+            <div class="calc__line">
+                <div class="calc__text">Аренда помещения:</div>
+                <div class="calc__input grnOneMounth">
+                    <input id="cost1" placeholder="0" type="number" name="amount" step="any" />
+                </div>
+    
+            </div>
+    
+            <div class="calc__line">
+                <div class="calc__text">Коммунальные услуги:</div>
+                <div class="calc__input grnOneMounth">
+                    <input id="cost2" placeholder="0" type="number" name="amount" step="any" />
+                </div>
+            </div>
+    
+            <div class="calc__line">
+                <div class="calc__text">Затраты на рекламу:</div>
+                <div class="calc__input grnOneMounth">
+                    <input id="cost3" placeholder="0" type="number" name="amount" step="any" />
+                </div>
+            </div>
+    
+            <div class="calc__line">
+                <div class="calc__text">Заработная плата (ставка):</div>
+    
+                <div class="calc__input">
+                    <span class="grnOneMounth"><input id="cost4" placeholder="0" type="number" name="amount" step="any" />
+                    </span>
+                    <input id="cost5" placeholder="К-во сотрудников" type="number" style="width: 90px;" />
+                    <span class="grn">
+                        <div class="calc__result" id="wageResult"></div>
+                    </span>
+                </div>
+            </div>
+    
+            <div class="calc__line">
+                <div class="calc__text">Затраты на открытие офиса единоразово:</div>
+                <div class="calc__input">
+                    <span class="grn"><input id="cost6" placeholder="0" type="number" name="amount" step="any" /></span>
+                </div>
+            </div>
+    
+            <div class="calc__line">
+                <div class="calc__text">Вступительный взнос единоразово:</div>
+                <div class="calc__input">
+                    <span class="grn"><input id="cost7" placeholder="0" type="number" name="amount" step="any" /></span>
+                </div>
+            </div>
+    
+            <div class="calc__line">
+                <div class="calc__text">Затраты на роялти: </div>
+                <div class="calc__input">
+                    <span class="grnOneMounth"><input id="cost8" placeholder="0" type="number" name="amount"
+                            step="any" /></span>
+                </div>
+            </div>
+    
+            <div class="calc__line">
+                <div class="calc__text">Налоги:</div>
+                <div class="calc__input">
+                    <span class="pct"><input id="cost9" placeholder="0" type="number" name="amount" step="any" /></span>
+                    <span class="grn">
+                        <div class="calc__result" id="taxResult"></div>
+                    </span>
+                </div>
+            </div>
+    
+            <div class="calc__line">
+                <div class="calc__text">Заработная плата (% - менеджера):</div>
+                <div class="calc__input">
+                    <span class="pct">
+                        <input id="cost10" placeholder="0" type="number" name="amount" step="any" />
+                    </span>
+                    <span class="grn">
+                        <div class="calc__result" id="salaryResult"></div>
+                    </span>
+                </div>
+            </div>
+    
+            <div class="calc__line">
+                <div class="calc__text"><strong>Всего расход:</strong></div>
+                <div class="calc__input">
+                    <span class="grn">
+                        <div class="calc__result" id="expensesResult"></div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="calc__section">
+            <div class="calc__title">Средние показатели</div>
+    
+            <div class="calc__line">
+                <div class="calc__text">Средний чек / 1 турист:</div>
+                <div class="calc__input grn">
+                    <input id="average1" placeholder="0" type="number" name="amount" step="any" />
+                </div>
+            </div>
+    
+            <div class="calc__line">
+                <div class="calc__text">Комиссия:</div>
+                <div class="calc__input pct">
+                    <input id="average2" placeholder="0" type="number" name="amount" step="any" />
+                </div>
+            </div>
+    
+            <!--
+    		<div class="calc__line">
+    			<div class="calc__text">Скидка:</div>
+    			<div class="calc__input pct">
+    				<input id="average3" placeholder="0" type="number" name="amount" step="any" />
+    			</div>
+    		</div>
+    	</div>
+    -->
+    
+            <div class="calc__section">
+                <div class="calc__title">Доходы</div>
+    
+                <div class="calc__line">
+                    <div class="calc__text">Всего туристов:</div>
+                    <div class="calc__input month">
+                        <input id="tourists" placeholder="0" type="number" name="amount" step="any" />
+                    </div>
+                </div>
+    
+                <div class="calc__line btnLine">
+                    <div class="radioInput">
+                        <input type="radio" id="radio1" name="radio" checked value="1"><label for="radio1">1 мес.</label>
+                        <input type="radio" id="radio12" name="radio" value="12"><label for="radio12">12 мес.</label>
+                    </div>
+                    <div class="btnInput">
+                        <input id="buttonCalc" type="button" value="Рассчитать" />
+                    </div>
+                </div>
+    
+                <div class="calc__line">
+                    <div class="calc__text">Всего оборот / мес.:</div>
+                    <div class="calc__input grn">
+                        <div class="calc__result" id="turnoverResult"></div>
+                    </div>
+                </div>
+    
+                <div class="calc__line">
+                    <div class="calc__text">Всего комиссия:</div>
+                    <div class="calc__input grn">
+                        <div class="calc__result" id="commissionResult"></div>
+                    </div>
+                </div>
+    
+                <!--
+    		<div class="calc__line">
+    			<div class="calc__text">Всего скидка:</div>
+    
+    			<div class="calc__input grn">
+    				<div class="calc__result" id="saleResult">&nbsp;</div>
+    			</div>
+    		</div>
+    -->
+    
+                <!--
+    		<div class="calc__line">
+    			<div class="calc__text">Всего доход от комиссии:</div>
+    			<div class="calc__input grn">
+    				<div class="calc__result" id="incomeResult">&nbsp;</div>
+    			</div>
+    		</div>
+    -->
+    
+                <div class="calc__line">
+                    <div class="calc__text"><strong>Всего чистый доход: </strong></div>
+                    <div class="calc__input">
+                        <span class="grn">
+                            <div class="calc__result" id="netIncomeResult"></div>
+                        </span>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+</body>
+</html>

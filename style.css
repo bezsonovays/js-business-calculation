@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
+
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+/*--------------------*/
+
+body {
+    background: #e2f3fe;
+}
+#calculatorForm {
+    font-family: "Open Sans", sans-serif !important;
+    color: #3c3c3c;
+    background: #e2f3fe;
+    padding: 10px 50px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+input {
+    padding: 6px 14px;
+    margin: 0 6px 0 10px;
+    border: 1px solid #c7c5c5;
+    border-radius: 2px;
+    width: 140px;
+}
+
+input[type="radio"],
+input[type="button"] {
+    width: auto !important;
+    cursor: pointer;
+}
+
+input:focus {
+    border: 2px solid #fff07f;
+    outline: none;
+    box-shadow: inset 5px 3px 6px 1px #86867e26;
+    -webkit-box-shadow: inset 5px 3px 6px 1px #86867e26;
+    -moz-box-shadow: inset 5px 3px 6px 1px #86867e26;
+}
+.calc__section {
+    margin-bottom: 40px;
+}
+.calc__line {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    padding: 10px 0;
+}
+
+.calc__input {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+.calc__title {
+    font-size: 1.6rem !important;
+    font-weight: 400;
+    text-align: center;
+    line-height: 3em;
+}
+
+.calc__text {
+    line-height: 1.8em;
+}
+
+input[type="number"]:invalid {
+    border: 1px solid red;
+}
+
+/*Убирает стелки в input-number*/
+/*Chrome*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*Firefox*/
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/*Для других*/
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
+
+/***********************************/
+.grn {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    line-height: 1.8em;
+}
+
+.grn::after {
+    content: " грн.";
+}
+
+.grnOneMounth::after {
+    content: " грн. за 1 мес.";
+}
+
+.pct input {
+    width: 50px;
+}
+
+.pct,
+.grnOneMounth,
+.month {
+    line-height: 1.8em;
+}
+
+.pct::after {
+    content: " %";
+}
+
+.month::after {
+    content: " за 1 мес.";
+}
+
+.calc__result {
+    padding: 6px 18px;
+    margin: 0 10px 0 18px;
+    border: 1px solid #c7c5c5;
+    width: auto;
+    background: #f3f3f3;
+    border-radius: 2px;
+    line-height: 1;
+    min-width: 120px;
+}
+
+#buttonCalc {
+    background: #ef0000;
+    padding: 14px 50px;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.1em;
+    cursor: pointer;
+
+}
+
+#buttonCalc:hover {
+    outline: none;
+    border: none;
+    -webkit-box-shadow: 0px 0px 5px #3c3c3cc4;
+    box-shadow: 0px 0px 5px #3c3c3cc4;
+    background: #ef0000d1;
+}
+
+#buttonCalc:focus {
+    outline: none;
+    border: none;
+}
+
+.btnLine {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    flex-direction: column;
+}
+
+.radioInput {
+    margin-bottom: 20px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnInput {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+}
